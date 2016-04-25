@@ -8,3 +8,20 @@ export interface IProduct{
     starRating: number;
     imageUrl: string;
 }
+
+// this class is not needed, it just illustrates what to do if we need to add a method to a contract described by the interface.
+export class Product implements IProduct{
+
+    constructor(public productId: number,
+                public productName: string,
+                public productCode: string,
+                public releaseDate: string,
+                public price: number,
+                public description: string,
+                public starRating: number,
+                public imageUrl: string){}
+
+    calculateDiscount(precent: number): number {
+        return this.price - (this.price * precent / 100);
+    }
+}
