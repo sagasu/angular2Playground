@@ -1,4 +1,6 @@
 import {Component} from "angular2/core";
+import {IProduct} from "./product";
+
 @Component({
     selector: 'mk-products',
     templateUrl: 'app/products/product-list.component.html'
@@ -11,7 +13,7 @@ export class ProductListComponent {
     showImage: boolean = false;
     listFilter: string = 'cart';
     // any is any type
-    products: any[] = [{
+    products: IProduct[] = [{
         "productId": 1,
         "productName": "Leaf Rake",
         "productCode": "GDN-0011",
