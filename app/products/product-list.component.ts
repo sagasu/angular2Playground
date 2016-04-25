@@ -3,7 +3,8 @@ import {IProduct} from "./product";
 
 @Component({
     selector: 'mk-products',
-    templateUrl: 'app/products/product-list.component.html'
+    templateUrl: 'app/products/product-list.component.html',
+    styleUrls: ['app/products/product-list.component.css']
 })
 export class ProductListComponent {
     // you don't need to specify a default value - here default value is 'Product list'
