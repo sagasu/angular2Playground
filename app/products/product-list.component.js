@@ -25,6 +25,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
+                    this.listFilter = 'cart';
                     // any is any type
                     this.products = [{
                             "productId": 1,
