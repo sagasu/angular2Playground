@@ -24,6 +24,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     this.pageTitle = 'Product List';
                     this.imageWidth = 50;
                     this.imageMargin = 2;
+                    this.showImage = false;
                     // any is any type
                     this.products = [{
                             "productId": 1,
@@ -66,6 +67,9 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
                         }];
                 }
+                ProductListComponent.prototype.toggleImage = function () {
+                    this.showImage = !this.showImage;
+                };
                 ProductListComponent = __decorate([
                     core_1.Component({
                         selector: 'mk-products',
