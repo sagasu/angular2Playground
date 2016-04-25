@@ -22,6 +22,8 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 function ProductListComponent() {
                     // you don't need to specify a default value - here default value is 'Product list'
                     this.pageTitle = 'Product List';
+                    this.imageWidth = 50;
+                    this.imageMargin = 2;
                     // any is any type
                     this.products = [{
                             "productId": 1,

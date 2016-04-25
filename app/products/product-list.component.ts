@@ -6,6 +6,8 @@ import {Component} from "angular2/core";
 export class ProductListComponent {
     // you don't need to specify a default value - here default value is 'Product list'
     pageTitle: string = 'Product List';
+    imageWidth: number = 50;
+    imageMargin: number = 2;
     // any is any type
     products: any[] = [{
         "productId": 1,
