@@ -68,6 +68,9 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
                         }];
                 }
+                ProductListComponent.prototype.ngOnInit = function () {
+                    console.log("entered OnInit");
+                };
                 ProductListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
                 };

@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, OnInit} from "angular2/core";
 import {IProduct} from "./product";
 
 @Component({
@@ -6,7 +6,10 @@ import {IProduct} from "./product";
     templateUrl: 'app/products/product-list.component.html',
     styleUrls: ['app/products/product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+    ngOnInit():any {
+        console.log("entered OnInit")
+    }
     // you don't need to specify a default value - here default value is 'Product list'
     pageTitle: string = 'Product List';
     imageWidth: number = 50;
