@@ -23,6 +23,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 }
                 StarComponent.prototype.ngOnChanges = function (changes) {
                     this.startWidth = this.rating * 86 / 5;
+                    console.debug(this.startWidth.toString());
                 };
                 __decorate([
                     core_1.Input(), 
