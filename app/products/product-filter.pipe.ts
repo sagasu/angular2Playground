@@ -8,11 +8,11 @@ import {IProduct} from "./product";
 export class ProductFilterPipe implements PipeTransform{
 
     transform(value:IProduct, args:any[]): IProduct[] {
-        let filter :string = args[0] ? args[0].toLocaleLowerCase() : null;
+        let a :string = args[0] ? args[0].toLocaleLowerCase() : null;
         // filter is a method from array object arr.filter
         // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-        return filter ? value.filter((product: IProduct) =>
-            product.productName.toLocaleLowerCase().indexOf(filter) != -1) : value;
+        return a ? value.filter((product: IProduct) =>
+            product.productName.toLocaleLowerCase().indexOf(a) != -1) : value;
     }
 
 }
