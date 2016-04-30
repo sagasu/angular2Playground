@@ -23,6 +23,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     this.ratingClicked = new core_1.EventEmitter();
                 }
                 StarComponent.prototype.onClick = function () {
+                    console.debug("clicked star, rasing event");
                     this.ratingClicked.emit("The rating $(this.rating) was clicked!");
                 };
                 StarComponent.prototype.ngOnChanges = function (changes) {

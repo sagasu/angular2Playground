@@ -12,6 +12,7 @@ export class StarComponent implements OnChanges{
         new EventEmitter<string>();
 
     onClick() {
+        console.debug("clicked star, rasing event")
         this.ratingClicked.emit(`The rating $(this.rating) was clicked!`);
     }
 
