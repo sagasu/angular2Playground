@@ -1,4 +1,4 @@
-import {Component, OnChanges, Input} from "angular2/core";
+import {Component, OnChanges, Input, Output, EventEmitter} from "angular2/core";
 import {startWith} from "rxjs/operator/startWith";
 @Component({
     selector: 'ai-star',
@@ -8,6 +8,12 @@ import {startWith} from "rxjs/operator/startWith";
 export class StarComponent implements OnChanges{
     @Input() rating: number;
     startWidth: number;
+    @Output ratingClicked: EventEmitter<string> =
+        new EventEmitter<string>();
+
+    onClick() {
+        this.ratingClicked.emit(`The rating $(this.rating) was clicked!`);
+    }
 
     ngOnChanges(changes:{}):any {
         this.startWidth = this.rating * 86 /5;

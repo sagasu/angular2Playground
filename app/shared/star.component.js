@@ -20,7 +20,11 @@ System.register(["angular2/core"], function(exports_1, context_1) {
         execute: function() {
             StarComponent = (function () {
                 function StarComponent() {
+                    this.ratingClicked = new core_1.EventEmitter();
                 }
+                StarComponent.prototype.onClick = function () {
+                    this.ratingClicked.emit("The rating $(this.rating) was clicked!");
+                };
                 StarComponent.prototype.ngOnChanges = function (changes) {
                     this.startWidth = this.rating * 86 / 5;
                     console.debug(this.startWidth.toString());
@@ -29,6 +33,10 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', Number)
                 ], StarComponent.prototype, "rating", void 0);
+                __decorate([
+                    core_1.Output, 
+                    __metadata('design:type', core_1.EventEmitter)
+                ], StarComponent.prototype, "ratingClicked", void 0);
                 StarComponent = __decorate([
                     core_1.Component({
                         selector: 'ai-star',
