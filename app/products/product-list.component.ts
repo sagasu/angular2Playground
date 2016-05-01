@@ -21,13 +21,16 @@ export class ProductListComponent implements OnInit {
     listFilter: string;
     // any is any type
     products: IProduct[];
+    errorMessage: string;
 
     constructor(private _productService: ProductService){
 
     }
 
     ngOnInit():any {
-        this.products = this._productService.getProducts();
+        this._productService.getProducts()
+            .subscribe(products => this.products = products,
+                       error => this.errorMessage = <any>error);
     }
 
     toggleImage(): void{
