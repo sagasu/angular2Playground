@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./products/product-list.component", "./products/product.service"], function(exports_1, context_1) {
+System.register(["angular2/core", "./products/product-list.component", "./products/product.service", "angular2/http", 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "./products/product-list.component", "./produc
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, product_list_component_1, product_service_1;
+    var core_1, product_list_component_1, product_service_1, http_1;
     var AppComponent;
     return {
         setters:[
@@ -22,18 +22,23 @@ System.register(["angular2/core", "./products/product-list.component", "./produc
             },
             function (product_service_1_1) {
                 product_service_1 = product_service_1_1;
-            }],
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (_1) {}],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                     this.pageTitle = 'simple angular 2 app';
                 }
                 AppComponent = __decorate([
+                    // load all features, when library is loaded it's javascript is executed loading observable objects.
                     core_1.Component({
                         selector: 'mk-app',
                         template: "\n    <div>\n        <h1>{{pageTitle}}</h1>\n        <mk-products></mk-products>\n    </div>\n    ",
                         directives: [product_list_component_1.ProductListComponent],
-                        providers: [product_service_1.ProductService]
+                        providers: [product_service_1.ProductService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
